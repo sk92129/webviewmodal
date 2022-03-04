@@ -18,8 +18,18 @@ const App = () => {
         >
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
-              <Text style={styles.modalText}>Hello World!</Text>
-              <WebView source={{ uri: 'https://reactnative.dev/' }} />
+              <Text style={styles.modalText}>Hello webview!</Text>
+              <View
+                  style={{
+                    flex: 1,
+                  }}
+              >
+                <WebView
+                    originWhitelist={['*']}
+                    source={{ html: '<h1>This is a static HTML source!</h1>' }}
+                />
+              </View>
+
               <Pressable
                   style={[styles.button, styles.buttonClose]}
                   onPress={() => setModalVisible(!modalVisible)}
