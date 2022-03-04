@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
+import { WebView } from 'react-native-webview';
+
 
 const App = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -17,6 +19,7 @@ const App = () => {
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
               <Text style={styles.modalText}>Hello World!</Text>
+              <WebView source={{ uri: 'https://reactnative.dev/' }} />
               <Pressable
                   style={[styles.button, styles.buttonClose]}
                   onPress={() => setModalVisible(!modalVisible)}
